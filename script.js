@@ -1,5 +1,4 @@
 import {countryList} from './countryCodes.js' ;
-console.log(countryList);
 
 const BASE_URL = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
@@ -54,6 +53,5 @@ btn.addEventListener("click" , async (evt)=>{
     let rate = num[toCurr.value.toLowerCase()];
 
     let finalAmount = amtVal*rate ;
-    console.log(finalAmount);
     msg.innerHTML = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
 })
