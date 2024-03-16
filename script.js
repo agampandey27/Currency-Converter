@@ -7,6 +7,7 @@ const btn = document.querySelector("form button") ;
 const fromCurr = document.querySelector(".from select") ;
 const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg") ;
+const exchangeBtn = document.querySelector(".exchange") ;
 
 for(let select of dropdowns){
     for(let currCode in countryList){
@@ -25,6 +26,20 @@ for(let select of dropdowns){
         updateFlag(evt.target) ;
     })
 }
+
+exchangeBtn.addEventListener("click" , ()=>{
+    
+    let i1 = document.querySelector(".i1");
+    let i2 = document.querySelector(".i2");
+    let support ;
+    support = i1.src;
+    i1.src = i2.src ;
+    i2.src = support ;
+
+    support = fromCurr.value ;
+    fromCurr.value = toCurr.value ;
+    toCurr.value = support ;
+});
 
 const updateFlag = (element) => {
     let currCode =  element.value ;
